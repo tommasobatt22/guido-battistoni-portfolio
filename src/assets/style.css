@@ -1,0 +1,42 @@
+:root {
+  --step-10: clamp(0.1817rem, 0.0565rem + 0.6258vw, 0.8075rem);
+  --step-9: clamp(0.218rem, 0.0678rem + 0.751vw, 0.969rem);
+  --step-8: clamp(0.2616rem, 0.0814rem + 0.9012vw, 1.1628rem);
+  --step-7: clamp(0.314rem, 0.0977rem + 1.0814vw, 1.3954rem);
+  --step-6: clamp(0.3768rem, 0.1172rem + 1.2977vw, 1.6745rem);
+  --step-5: clamp(0.4521rem, 0.1407rem + 1.5573vw, 2.0094rem);
+  --step-4: clamp(0.5425rem, 0.1688rem + 1.8687vw, 2.4113rem);
+  --step-3: clamp(0.651rem, 0.2025rem + 2.2425vw, 2.8935rem);
+  --step-2: clamp(0.7813rem, 0.2431rem + 2.691vw, 3.4722rem);
+  --step-1: clamp(0.9375rem, 0.2917rem + 3.2292vw, 4.1667rem);
+  --step-0: clamp(1.125rem, 0.35rem + 3.875vw, 4.5rem);
+}
+@font-face {
+    font-family: 'SuisseIntl-Medium'; /* Questo è il nome che userai nel tuo CSS */
+    src: url('/fonts/SuisseIntl-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal; 
+    font-display: swap; 
+}
+
+body {
+    font-family: 'SuisseIntl-Medium', sans-serif;
+}
+
+
+
+.text-title{
+    font-size: var(--step-0);
+    letter-spacing: -0.04em;
+    line-height: 104%;
+}
+.small-text{
+    font-size: var(--step-9);
+    line-height:119%;
+    /* font-weight: 500; */
+     
+}
+
+
+
+
