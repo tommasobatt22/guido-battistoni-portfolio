@@ -15,7 +15,7 @@
                 </div>
             </div>
             <!-- fake footer -->
-            <div class="flex items-center w-full absolute p-3 bottom-0 ">
+            <div class="flex items-center w-full absolute p-5 bottom-0 ">
                 <div class="w-4/7 flex">
                     <button class="small-text text-white" @click="showAbout">About</button>
                 </div>
@@ -69,8 +69,29 @@
                 </div>
             </div>
         </div>
-        <div class="h-[90vh] bg-red-700 absolute z-20 top-full w-full" id="work-section">
-            
+        <div class="absolute z-20 top-full w-full " id="works">
+            <div class="h-[90vh] bg-red-700 w-full " id="work-section-1">
+                <div class="sticky work-titles flex items-center w-full p-5 opacity-0"  id="work-1" >
+                    <div class="w-4/7 flex">
+                        <button class="medium-text text-white" @click="showAbout">Swagg</button>
+                    </div>
+                    <div class="w-3/7 flex justify-between">
+                        <button class="medium-text text-white" @click="showWork">ty shi</button>
+                        <span class="medium-text text-white"><a href="mailto:battistoniguido@gmail.com">Yurrrr</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="h-[90vh] bg-blue-700 w-full py-10" id="work-section-2">
+                <div class="sticky work-titles flex items-center w-full p-5"  id="work-2">
+                    <div class="w-4/7 flex">
+                        <button class="medium-text text-white" @click="showAbout">Lavoro swag</button>
+                    </div>
+                    <div class="w-3/7 flex justify-between">
+                        <button class="medium-text text-white" @click="showWork">Sono la goat</button>
+                        <span class="medium-text text-white"><a href="mailto:battistoniguido@gmail.com">Fr fr</a></span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -127,7 +148,9 @@ function showAbout() {
 function showWork(){
     const pageContainer = document.getElementById("page-container")
     const nome = document.getElementById("name-section")
-    const workSection = document.getElementById('work-section')
+    const workSection = document.getElementById('works')
+    console.log(workSection);
+    
 
     const top = nome.offsetTop + nome.offsetHeight
     const viewportHeight = window.innerHeight
@@ -139,15 +162,13 @@ function showWork(){
             top: '100%', // Parte dal basso
         })
 
-        // Animazione di apertura
-        gsap.to(workSection, {
-            top: top + 'px',
-            duration: 0.6,
-            ease: "power2.out"
+    gsap.to(workSection, {
+        top: top + 'px',
+        duration: 0.6,
+        ease: "power2.out"
+    })
 
-        })
-
-    
+  initWorkSectionAnimations()  
 }
 function changeGuidoColor() {
     const gBs = document.getElementsByClassName('guido-battistoni')
@@ -158,5 +179,47 @@ function changeGuidoColor() {
             gb.classList.add('text-white');
         }
     });
+}
+// Funzione per animare l'opacità delle sezioni work
+function initWorkSectionAnimations() {
+    // Configurazione dell'Intersection Observer
+    const observerOptions = {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0.5 // triggera quando il 50% dell'elemento è visibile
+    };
+
+    // Callback che viene chiamata quando cambia la visibilità
+    const observerCallback = (entries) => {
+        entries.forEach(entry => {
+            const workDiv = entry.target.querySelector('[id^="work-"]');
+            
+            if (entry.isIntersecting) {
+                // Sezione visibile a metà schermo - anima verso opacità 0.8
+                gsap.to(workDiv, {
+                    opacity: 0.8,
+                    duration: 0.6,
+                    ease: "power2.out"
+                });
+            } else {
+                // Sezione non più visibile - riporta opacità a 0
+                gsap.to(workDiv, {
+                    opacity: 0,
+                    duration: 0.4,
+                    ease: "power2.in"
+                });
+            }
+        });
+    };
+       // Crea l'observer
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Osserva tutte le sezioni work
+    const workSections = document.querySelectorAll('[id^="work-section-"]');
+    workSections.forEach(section => {
+        observer.observe(section);
+    });
+
+    
 }
 </script>
