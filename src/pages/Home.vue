@@ -26,18 +26,28 @@
             </div>
 
             <!-- about section -->
-            <div class="w-full bg-white z-20 absolute top-full py-3" id="about-section">
-                <div class="text-black text-title tracking-tight leading-none px-5">
-                    <span class="mb-3 block">
-                        <span class="text-white">Guido Battistoni</span> is a Venice-based interdisciplinary designer
-                        investigating the discipline of visual communication across mediums and technologies.
+            <div class="w-full bg-white z-20 absolute top-full py-3 px-5 " id="about-section">
+                <div class="relative" style="min-height: -webkit-fill-available ">
+
+                <div class="text-black text-title tracking-tight leading-none">
+                    <span class="mb-16 block">
+                        <span class="text-white">Guido Battistoni</span> is an interdisciplinary brand designer and art director whose practice moves between culture, technology, and visual communication.
                     </span>
-                    <span class="block">
-                        Right now at AKQA
-                    </span>
+                    
                 </div>
-                <div class="flex justify-end items-stretch">
-                    <div class="me-5 w-3/7 ">
+                <div class="flex items-stretch">
+                    <div class="w-4/7">
+                        <div class="">
+                            <span class="medium-text text-black/50 block mb-4" >
+                                Rooted in <span class="text-black ">motion</span>, <span class="text-black">typography</span>, and <span class="text-black">generative AI</span>, he blends design and storytelling into refined, culturally attuned brand experiences. 
+                                With a background in the luxury sector, from fashion to automotive and spirits, his work unites craft and innovation into a distinct, cohesive vision. <br>
+                            </span>
+                            <span class="medium-text text-black/50 block">
+                                Currently Art Director at AKQA Venice.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="me-5 w-3/7">
                         <div class="border-t-1 border-black/50 py-3 flex flex-row ">
                             <div class="w-2/7">
                                 <span class="small-text opacity-50">Awards</span>
@@ -53,20 +63,22 @@
                             </div>
                             <div class="w-5/7">
                                 <span class="small-text block mb-3">
-                                    Ferrari, Campari, Prada, CocaCola Company, H&M, Hanes
+                                    Ferrari, Prada, Nike, Campari, Groupe l’Occitane, Brembo, CocaCola Company, IKEA, H&M, Sony, Haynes Group
                                 </span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="flex items-center w-full absolute px-5 bottom-3 ">
-                    <div class="w-4/7 flex">
-                        <button class="text-black" @click="showAbout">About</button>
-                    </div>
-                    <div class="w-3/7 flex justify-end">
-                        <span class="text-black"><a href="mailto:battistoniguido@gmail.com">Contact</a></span>
+                    <div class="flex flex-fill w-full items-center absolute bottom-3">
+                        <div class="w-4/7 flex">
+                            <button class="text-black" @click="showAbout">About</button>
+                        </div>
+                        <div class="w-3/7 flex justify-end">
+                            <span class="text-black"><a href="mailto:battistoniguido@gmail.com">Contact</a></span>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="absolute z-20 top-full w-full " id="works">
