@@ -160,15 +160,15 @@ export default {
                     title: 'Ferrari Brand Experience',
                     subtitle: 'Art direction',
                     year: '2025',
-                    backgroundImage: '/src/assets/images/1_bg.png',
-                    video:'/src/assets/videos/sample.mp4'
+                    backgroundImage: '/images/1_bg.png',
+                    video:'/videos/sample.mp4'
                 },
                 {
                     title: 'Prada Digital Campaign',
                     subtitle: 'Art direction',
                     year: '2025',
-                    backgroundImage: '/src/assets/images/2_bg.png',
-                    video:'/src/assets/videos/sample.mp4'
+                    backgroundImage: '/images/2_bg.png',
+                    video:'/videos/sample.mp4'
                 },
             ]
         }
@@ -293,7 +293,7 @@ export default {
         showVideo(workIndex){
              const video = document.getElementById(`video-${workIndex}`);
             if (video) {
-                // Fade in del video
+                // Fade in del video 
                 gsap.to(video, {
                     opacity: 1,
                     duration: 0.3,
